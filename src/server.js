@@ -34,4 +34,4 @@ app.use("/api/likes", likesRoutes);
 
 
 // 서버 실행
-app.listen(PORT, () => console.log(`서버 실행: http://localhost:${PORT}`));
+app.listen(PORT, '127.0.0.1', () => console.log(`서버 실행: http://localhost:${PORT}`));
