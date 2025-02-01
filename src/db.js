@@ -7,6 +7,8 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    console.log('connected', process.env.MONGO_URI);
+
   } catch (err) {
     process.exit(1);
   }
