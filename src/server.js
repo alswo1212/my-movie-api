@@ -3,6 +3,7 @@ const cors = require("cors");
 const connectDB = require("./db");
 const userRoutes = require("./routes/userRoutes");
 const likesRoutes = require("./routes/likesRoutes");
+const reviewsRoutes = require("./routes/reviewsRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -31,6 +32,7 @@ connectDB();
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/likes", likesRoutes);
+app.use("/api/reviews", reviewsRoutes);
 
 
 // 서버 실행
