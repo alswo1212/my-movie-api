@@ -11,6 +11,8 @@ const connectDB = async () => {
     console.log('connect success');
 
   } catch (err) {
+    console.log('connect fail');
+    console.log(err);
     process.exit(1);
   }
 };
