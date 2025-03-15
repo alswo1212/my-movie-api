@@ -7,7 +7,6 @@ const getReviews = async (movie_cd) => {
   reviews.forEach(rv => rv._id = rv._id.toString());
   return reviews;
 }
-const bad = { msg: 'ㅗㅗ' };
 router.get("/:movieCd", async (req, res) => {
   const { movieCd } = req.params;
   try {
@@ -15,7 +14,7 @@ router.get("/:movieCd", async (req, res) => {
     res.status(200).json(reviews);
   } catch (error) {
     console.log(error);
-    res.status(400).json(bad);
+    res.status(400).json({ msg: 'get review error' });
   }
 });
 
@@ -33,7 +32,7 @@ router.post("/:movieCd", async (req, res) => {
     res.status(200).json(reviews);
   } catch (error) {
     console.log(error);
-    res.status(400).json(bad);
+    res.status(400).json({ msg: 'post review error' });
   }
 });
 
@@ -46,7 +45,7 @@ router.put("/:movie_cd/:id", async (req, res) => {
     res.status(200).json(reviews);
   } catch (error) {
     console.log(error);
-    res.status(400).json(bad);
+    res.status(400).json({ msg: 'put review error' });
   }
 });
 
@@ -59,7 +58,7 @@ router.delete("/:movie_cd/:id", async (req, res) => {
     res.status(200).json(reviews);
   } catch (error) {
     console.log(error);
-    res.status(400).json(bad);
+    res.status(400).json({ msg: 'delete review error' });
   }
 });
 
