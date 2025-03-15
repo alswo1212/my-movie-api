@@ -14,6 +14,7 @@ const allowedOrigins = ["https://alswo1212.github.io", "http://localhost:5173"];
 app.use(
   cors({
     origin: function (origin, callback) {
+      console.log('request from', origin)
       if (allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
